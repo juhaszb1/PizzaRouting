@@ -18,10 +18,11 @@ function PizzaListPage() {
             <div className="row">
                 {pizzas.map((pizza) => (
                     <div key={pizza.id + 3} className="col-sm-3">
-                        <div className="card" style={{ width: "18rem" }}>
+                        <div className="card" style={{ width: "18rem", height: "28rem" }}>
                             <div className="card-body">
                                 <NavLink key={pizza.id} to={`/pizza/${pizza.id}`}>
                                     <img className="img-fluid"
+                                        style={{ width: "18rem", height: "18rem" }}
                                         alt="hello world, ide kéne a képed!"
                                         src={pizza.kepURL ? pizza.kepURL : "https://via.placeholder.com/400x800"}
                                     />

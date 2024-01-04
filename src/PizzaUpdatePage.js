@@ -50,12 +50,12 @@ function PizzaUpdatePage() {
                             "Content-Type": "application/json",
                         },
                         body: JSON.stringify({
-                            name: e.target.elements.name.value,
-                            isGlutenFree: e.target.elements.isGlutenFree.checked,
-                            kepURL: e.target.elements.kepURL.value
+                            "id": id,
+                            "name": e.target.elements.name.value,
+                            "isGlutenFree": (e.target.elements.isGlutenFree.checked? (1):(0)),
+                            "kepURL": e.target.elements.kepURL.value
                         })
                     })
-                        .then((res) => res.json())
                         .then(() => navigate("/"));
                 }}
             >

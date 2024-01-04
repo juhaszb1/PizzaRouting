@@ -5,19 +5,17 @@ function NewPizzaPage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { name, kepURL, isGlutenFree } = e.target.elements;
-        const pizzaData = {
-            name: name.value,
-            kepURL: kepURL.value,
-            isGlutenFree: isGlutenFree.checked,
-        };
 
         try {
             await fetch("https://pizza.kando-dev.eu/Pizza", {
                 method: "POST",
-                body: JSON.stringify(pizzaData),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    "name": e.target.elements.name.value,
+                    "kepURL": e.target.elements.kepURL.value,
+                    "isGlutenFree": (e.target.elements.isGlutenFree.checked? (1):(0)),
+                }),
             });
-            console.log(pizzaData);
             navigate("/");
         } catch (error) {
             console.log(error);

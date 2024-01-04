@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-
 function PizzaDeletePage() {
     const params = useParams();
     const id = params.pizzaId;
